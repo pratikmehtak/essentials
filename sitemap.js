@@ -3,7 +3,7 @@
 // Version: 2
 // Date: 2007-04-12
 // ---------------------------------------------------
-// Modified by Mohammad Fazle Rabbi 
+// Modified by Mohammad Fazle Rabbi
 // www.bloggerspice.com
 // Date : 08-04-2015
 // global arrays
@@ -172,11 +172,11 @@ function displayToc(filter) {
 // this function creates a three-column table and adds it to the screen
    var numDisplayed = 0;
    var tocTable = '';
-   var tocHead1 = 'POST TITLE';
+   var tocHead1 = 'Brew Title';
    var tocTool1 = 'Click to sort by title';
-   var tocHead2 = 'POST DATE';
+   var tocHead2 = 'Brew Date';
    var tocTool2 = 'Click to sort by date';
-   var tocHead3 = 'LABELS';
+   var tocHead3 = 'Brew Type';
    var tocTool3 = '';
    if (sortBy == "titleasc") { 
       tocTool1 += ' (descending)';
