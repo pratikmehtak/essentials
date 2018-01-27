@@ -3,7 +3,7 @@
 // Version: 2
 // Date: 2007-04-12
 // ---------------------------------------------------
-// Modified by Mohammad Fazle Rabbi
+// Modified by Mohammad Fazle Rabbi 
 // www.bloggerspice.com
 // Date : 08-04-2015
 // global arrays
@@ -172,11 +172,11 @@ function displayToc(filter) {
 // this function creates a three-column table and adds it to the screen
    var numDisplayed = 0;
    var tocTable = '';
-   var tocHead1 = 'Brew Title';
+   var tocHead1 = 'POST TITLE';
    var tocTool1 = 'Click to sort by title';
-   var tocHead2 = 'Brew Date';
+   var tocHead2 = 'POST DATE';
    var tocTool2 = 'Click to sort by date';
-   var tocHead3 = 'Brew Type';
+   var tocHead3 = 'LABELS';
    var tocTool3 = '';
    if (sortBy == "titleasc") { 
       tocTool1 += ' (descending)';
@@ -202,7 +202,7 @@ function displayToc(filter) {
    tocTable += '<td class="toc-header-col1">';
    tocTable += '<a href="javascript:toggleTitleSort();" title="' + tocTool1 + '">' + tocHead1 + '</a>';
    tocTable += '</td>';
-   tocTable += '<td class="toc-header-col2">';
+   tocTable += '<td class="toc-header-col2" style="display:none">';
    tocTable += '<a href="javascript:toggleDateSort();" title="' + tocTool2 + '">' + tocHead2 + '</a>';
    tocTable += '</td>';
    tocTable += '<td class="toc-header-col3">';
@@ -211,12 +211,12 @@ function displayToc(filter) {
    tocTable += '</tr>';
    for (var i = 0; i < postTitle.length; i++) {
       if (filter == '') {
-         tocTable += '<tr><td class="toc-entry-col1"><a href="' + postUrl[i] + '" title="' + postSum[i] + '">' + postTitle[i] + '</a></td><td class="toc-entry-col2">' + postDate[i] + '</td><td class="toc-entry-col3">' + postLabels[i] + '</td></tr>';
+         tocTable += '<tr><td class="toc-entry-col1"><a href="' + postUrl[i] + '" title="' + postSum[i] + '">' + postTitle[i] + '</a></td><td class="toc-entry-col2" style="display:none">' + postDate[i] + '</td><td class="toc-entry-col3">' + postLabels[i] + '</td></tr>';
          numDisplayed++;
       } else {
           z = postLabels[i].lastIndexOf(filter);
           if ( z!= -1) {
-             tocTable += '<tr><td class="toc-entry-col1"><a href="' + postUrl[i] + '" title="' + postSum[i] + '">' + postTitle[i] + '</a></td><td class="toc-entry-col2">' + postDate[i] + '</td><td class="toc-entry-col3">' + postLabels[i] + '</td></tr>';
+             tocTable += '<tr><td class="toc-entry-col1"><a href="' + postUrl[i] + '" title="' + postSum[i] + '">' + postTitle[i] + '</a></td><td class="toc-entry-col2" style="display:none">' + postDate[i] + '</td><td class="toc-entry-col3">' + postLabels[i] + '</td></tr>';
              numDisplayed++;
           }
         }
@@ -261,3 +261,4 @@ function hideToc() {
   var toclink = document.getElementById("toclink");
   toclink.innerHTML = '<a href="#" onclick="scroll(0,0); showToc(); Effect.toggle('+"'toc-result','blind');"+'">� Show Table of Contents</a> <img src="http://chenkaie.blog.googlepages.com/new_1.gif"/>';
 }
+
